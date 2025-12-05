@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Nav from "./Nav";
+import ManageCar from "./ManagerCar.jsx";
+import Home from "./Home.jsx";
+import Simulador from "./Simulator.jsx";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-    </>
-  )
+    <main className="p-4">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/manage" element={<ManageCar />} />
+        <Route path="/simulador" element={<Simulador />} />
+      </Routes>
+    </main>
+  );
 }
-
-export default App
