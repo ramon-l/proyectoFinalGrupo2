@@ -7,7 +7,7 @@ import clientesRoutes from "./routes/cliente.routes";
 import ventasRoutes from "./routes/ventas.routes";
 import catalogoRoutes from "./routes/catalogo.routes";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
@@ -21,7 +21,7 @@ app.use('/api', ventasRoutes);
 app.use('/api', clientesRoutes);
 app.use('/api', catalogoRoutes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
      console.log(`Servidor en http://localhost:${PORT}`);
 }
 )
